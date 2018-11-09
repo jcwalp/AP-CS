@@ -25,69 +25,62 @@ public class Translator {
 						inputCopy = inputCopy + bork.toUpperCase();
 					}
 					else if (inputCopy.indexOf("the") >= 0){
-						inputCopy = inputCopy.replace("the", "1");
+						inputCopy = inputCopy.replace("the", "ZEE");
 					}
 					else if (inputCopy.indexOf("an") >= 0){
-						inputCopy = inputCopy.replace("an", "2");
+						inputCopy = inputCopy.replace("an", "UN");
 					}
 					else if (inputCopy.indexOf("au") >= 0){
-						inputCopy = inputCopy.replace("au", "3");
+						inputCopy = inputCopy.replace("au", "OO");
 					}
 					else if (inputCopy.charAt(i1) == 'a' && inputCopy.charAt(i1+1) != ' '){
-						inputCopy = inputCopy.replace("a", "4");
+						inputCopy = inputCopy.replace("a", "1");
 					}
 					else if (inputCopy.indexOf("ow") >= 0){
-						inputCopy = inputCopy.replace("ow", "5");
+						inputCopy = inputCopy.replace("ow", "OO");
 					}
 					else if (inputCopy.indexOf("tion") >= 0){
-						inputCopy = inputCopy.replace("tion", "6");
+						inputCopy = inputCopy.replace("tion", "SHUN");
 					}
 					else if (inputCopy.indexOf("ir") >= 0){
-						inputCopy =  inputCopy.replace("ir", "7");
+						inputCopy =  inputCopy.replace("ir", "UR");
 					}
 					else if (inputCopy.charAt(i1) == 'o'){
-						inputCopy= inputCopy.replace("o", "8");
+						inputCopy= inputCopy.replace("o", "U");
 					}
 					else if (inputCopy.charAt(i1) == 'i' && inputCopy.charAt(i1-1) != ' '){ //TOOK OUT AND STATEMENT FOR DEBUG
-						inputCopy = inputCopy.replace("i", "9");
+						inputCopy = inputCopy.replace("i", "2");
 					}
 					else if (inputCopy.charAt(i1) == 'e' && inputCopy.charAt(i1 + 1) == 'n' && inputCopy.charAt(i1 + 2) == ' '){
-						inputCopy = inputCopy.replace("en", "10");
+						inputCopy = inputCopy.replace("en", "3");
 					}
 					else if (inputCopy.charAt(i1) == 'f'){
-						inputCopy = inputCopy.replace("f", "11");
+						inputCopy = inputCopy.replace("f", "FF");
 					}
-					else if (inputCopy.charAt(i1) == 'e' && inputCopy.substring(0, inputCopy.length() - 2).charAt(i1 + 1) == ' '){ //REMOVED && inputCopy.charAt(i1+1) == ' ' FOR DEBUG
-						inputCopy = inputCopy.replace("e", "12");
+					else if (inputCopy.charAt(i1) == 'e' && inputCopy.charAt(i1 - 1) != ' ' && inputCopy.charAt(i1 + 1) != ' '){ //REMOVED && inputCopy.charAt(i1+1) == ' ' FOR DEBUG
+						inputCopy = inputCopy.replace("e", "4");
 					}
 					else if (inputCopy.charAt(0) != 'u' && inputCopy.charAt(i1) == 'u' && inputCopy.charAt(i1-1) != ' '){
-						inputCopy = inputCopy.replace("u", "13");
+						inputCopy = inputCopy.replace("u", "5");
 					}
 					else if (inputCopy.charAt(i1) == 'v'){
-						inputCopy = inputCopy.replace("v", "14");
+						inputCopy = inputCopy.replace("v", "F");
 					}
 					else if (inputCopy.charAt(i1) == 'w'){
-						inputCopy = inputCopy.replace("w", "15");
+						inputCopy = inputCopy.replace("w", "V");
 					}
 				}
-				inputCopy.replaceAll("1", "zee");
-				inputCopy.replaceAll("2", "un");
-				inputCopy.replaceAll("3", "oo");
-				inputCopy.replaceAll("4", "e");
-				inputCopy.replaceAll("5", "oo");
-				inputCopy.replaceAll("6", "shun");
-				inputCopy.replaceAll("7", "ur");
-				inputCopy.replaceAll("8", "u");
-				inputCopy.replaceAll("9", "ee");
-				inputCopy.replaceAll("10", "ee");
-				inputCopy.replaceAll("11", "ff");
-				inputCopy.replaceAll("12", "e-a");
-				inputCopy.replaceAll("13", "oo");
-				inputCopy.replaceAll("14", "f");
-				inputCopy.replaceAll("15", "v");
+				inputCopy = inputCopy.replaceAll("1", "e").
+						replaceAll("2", "ee").
+						replaceAll("3", "ee").
+						replaceAll("4", "e-a").
+						replaceAll("5", "oo");
+
+
+
 
 				if (i == 1){
-					in1 = inputCopy;
+					in1 = inputCopy.substring(2, inputCopy.length()-2);
 				}
 				else if (i == 2){
 					in2 = inputCopy;
